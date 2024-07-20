@@ -1,5 +1,6 @@
 import reactLogo from './assets/react.svg'
-import VideoPlayer from './component/videoplayer'
+import Navbar from './components/Navbar'
+import VideoPlayer from './components/videoplayer'
 import viteLogo from '/vite.svg'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <VideoPlayer/>
+        <Navbar/>
       </div>
     </>
   )
