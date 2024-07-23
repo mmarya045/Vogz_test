@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from "react";
 import Hls from "hls.js";
 import mux from "mux-embed";
 
+
 export default function VideoPlayer() {
   const videoRef = useRef(null);
-  const src = "https://live-hls-abr-cdn.livepush.io/live/bigbuckbunnyclip/index.m3u8";
+  const src = "https://stream.mux.com/yb2L3z3Z4IKQH02HYkf9xPToVYkOC85WA.m3u8";
 
   useEffect(() => {
     let hls;
@@ -22,19 +23,19 @@ export default function VideoPlayer() {
         hls.loadSource(src);
         hls.attachMedia(video);
 
-        // mux.monitor(video, {
-        //   debug: false,
-        //   // pass in the 'hls' instance and the 'Hls' constructor
-        //   hlsjs: hls,
-        //   Hls,
-        //   data: {
-        //     env_key: "ENV_KEY", // required
-        //     // Metadata fields
-        //     player_name: "Main Player", // any arbitrary string you want to use to identify this player
-        //     player_init_time: initTime
-        //     // ...
-        //   }
-        // });
+        mux.monitor(video, {
+          debug: false,
+          // pass in the 'hls' instance and the 'Hls' constructor
+          hlsjs: hls,
+          Hls,
+          data: {
+            env_key: process.env.ENV_KEY, // required
+            // Metadata fields
+            player_name: "Main Player", // any arbitrary string you want to use to identify this player
+            player_init_time: initTime
+            // ...
+          }
+        });
       }
     }
 
@@ -46,10 +47,15 @@ export default function VideoPlayer() {
   }, [videoRef]);
 
   return (
-    <video
+    <video autoPlay className="w-full h-full rounded-[35px] object-cover"
       controls
       ref={videoRef}
-      style={{ width: "100%", maxWidth: "500px" }}
     />
   );
 }
+
+/*            <video autoPlay loop muted className="w-full h-full rounded-[35px] object-cover">
+            <source src={test_video}/>
+                Your browser does not support the video tag.
+            </video>
+*/
