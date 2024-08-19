@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav>
             <div>
                 <div>
-                    <a href="/"><img src={logo} alt='' className="inline-block items-center px-[100px] mt-1"/></a>
+                <a href="/"><img src={logo} alt='' className="inline-block items-center px-[100px] mt-1"/></a>
                 <div className="w-[1550px] h-[140px] px-40 justify-start items-center gap-24 inline-flex">
                     <div className="w-[95px] h-[24.94px] relative"></div>
                     <div className="h-51 px-[60px] py-3 bg-stone-100 rounded-[100px] justify-center items-center gap-[20px] flex">

@@ -19,8 +19,6 @@ const Cards = () => {
     <div className='flex justify-around'>
         <Card/>
         <Card/>
-        <Card/>
-        <Card/>
     </div>
   )
 }
